@@ -11,8 +11,7 @@ import Foundation
 
 enum SnipMakerErrors: Error {
     case filesNotFound(String)
-    case parseError
-    case parameterError
+    case parsingError
 }
 
 // MARK: - LocalizedError
@@ -22,10 +21,8 @@ extension SnipMakerErrors: LocalizedError {
         switch self {
         case .filesNotFound(let directory):
             return "No .tcbundle file in this directory: \(directory)"
-        case .parseError:
+        case .parsingError:
             return "Parse error"
-        case .parameterError:
-            return "Can't build parameter"
         }
     }
 }

@@ -10,10 +10,12 @@ import Foundation
 // MARK: - TCFields
 
 struct TCFields: Codable {
+    
+    // MARK: - Properties
+    
     let description: String
     let supportedLanguages: [String]
     let expanders: [TCFieldExpanders]
     let isEnabled: Bool
     let name: String
 }
-

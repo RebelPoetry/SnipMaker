@@ -27,7 +27,7 @@ protocol Parser {
     ///           ],
     ///           "thirdProperty": "some text ${thirdParameter} some text"
     ///          ]
-    ///     let parametersFromSomeData = findParameters(from: someData)
+    ///     let parametersFromSomeData = findParameters(_ data: someData)
     ///
     /// And 'parametersFromSomeData' has the form:
     ///

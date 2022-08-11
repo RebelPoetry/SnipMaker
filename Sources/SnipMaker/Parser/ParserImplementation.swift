@@ -20,7 +20,6 @@ extension ParserImplementation: Parser {
     func findParameters(_ data: [String: Any]) -> [String: String] {
         var foundParameters: [String: String] = [:]
         let values = data.map(\.value)
-        
         for value in values {
             if let dictionary = value as? [[String: Any]] {
                 for dictionaryValue in dictionary {
@@ -51,7 +50,6 @@ extension ParserImplementation: Parser {
         var string = string
         var dictionaryOfParameters: [String: String] = [:]
         var nameOfParameter = ""
-        
         while !string.isEmpty {
             let symbol = string.removeFirst()
             if symbol == "$" {

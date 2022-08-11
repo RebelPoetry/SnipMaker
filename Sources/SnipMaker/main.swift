@@ -26,7 +26,7 @@ struct SnipMaker: ParsableCommand {
         for file in files {
             if let jsonData = try String(contentsOfFile: "\(takeDirectory)/\(file)").data(using: .utf8) {
                 guard let parsedData = try JSONSerialization.jsonObject(with: jsonData) as? [String: Any] else {
-                    throw SnipMakerErrors.parseError
+                    throw SnipMakerErrors.parsingError
                 }
                 parsedFiles.append(parsedData)
                 parameters.merge(parser.findParameters(parsedData)) { (current, _) in current }

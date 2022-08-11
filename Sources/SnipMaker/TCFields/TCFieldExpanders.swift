@@ -21,4 +21,3 @@ struct TCFieldExpanders: Codable {
     let identifier: String
     let pattern: String
 }
-
