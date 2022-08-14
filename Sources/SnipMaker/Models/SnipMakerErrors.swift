@@ -12,6 +12,8 @@ import Foundation
 enum SnipMakerErrors: Error {
     case filesNotFound(String)
     case parsingError
+    case parameterError(String)
+    case unknownFunction(String)
 }
 
 // MARK: - LocalizedError
@@ -23,7 +25,10 @@ extension SnipMakerErrors: LocalizedError {
             return "No .tcbundle file in this directory: \(directory)"
         case .parsingError:
             return "Parse error"
+        case .parameterError(let function):
+            return "Can't apply \(function) to parameter"
+        case .unknownFunction(let function):
+            return "'\(function)' is not supports yet"
         }
     }
 }
-
