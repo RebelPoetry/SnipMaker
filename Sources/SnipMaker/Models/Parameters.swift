@@ -10,6 +10,7 @@ import Foundation
 // MARK: - Parameters
 
 enum ParameterFunctions: String {
+    
     case uppercase
     case ucfirst
     case lowercase
@@ -20,12 +21,16 @@ enum ParameterFunctions: String {
         case .uppercase:
             return string.uppercased()
         case .ucfirst:
-            guard let first = string.first else { throw SnipMakerErrors.parameterError(".ucfirst") }
+            guard let first = string.first else {
+                throw SnipMakerErrors.parameterError(".ucfirst")
+            }
             return first.uppercased() + String(string.dropFirst())
         case .lowercase:
             return string.lowercased()
         case .lcfirst:
-            guard let first = string.first else { throw SnipMakerErrors.parameterError(".lcfirst") }
+            guard let first = string.first else {
+                throw SnipMakerErrors.parameterError(".lcfirst")
+            }
             return first.lowercased() + String(string.dropFirst())
         }
     }

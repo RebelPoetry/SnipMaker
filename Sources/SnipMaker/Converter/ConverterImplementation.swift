@@ -58,8 +58,7 @@ extension ConverterImplementation: Converter {
         var convertedString = string
         var nameOfParameter = ""
         var nameOfFunction = ""
-        var dictionaryOfUpdates: [String: String] = [:]
-        
+        var dictionaryOfUpdates: [String: String] = [:]        
         for parameter in parameters {
             convertedString = convertedString.replacingOccurrences(of: "${\(parameter.key)}", with: "\(parameter.value)")
         }
@@ -76,7 +75,9 @@ extension ConverterImplementation: Converter {
                         while let char = string.first, char.isLetter {
                             nameOfFunction += String(string.removeFirst())
                         }
-                        guard let function = ParameterFunctions(rawValue: nameOfFunction) else { throw SnipMakerErrors.unknownFunction(nameOfFunction)}
+                        guard let function = ParameterFunctions(rawValue: nameOfFunction) else {
+                            throw SnipMakerErrors.unknownFunction(nameOfFunction)
+                        }
                         let keyForDictionary = "\(nameOfParameter).\(nameOfFunction)"
                         dictionaryOfUpdates[keyForDictionary] = try function.apply(parameters[nameOfParameter]!)
                         nameOfFunction = ""
