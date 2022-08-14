@@ -58,10 +58,12 @@ extension ConverterImplementation: Converter {
         var convertedString = string
         var nameOfParameter = ""
         var nameOfFunction = ""
-        var dictionaryOfUpdates: [String: String] = [:]        
+        var dictionaryOfUpdates: [String: String] = [:]
+        
         for parameter in parameters {
             convertedString = convertedString.replacingOccurrences(of: "${\(parameter.key)}", with: "\(parameter.value)")
         }
+        
         while !string.isEmpty {
             let symbol = string.removeFirst()
             if symbol == "$" {
@@ -86,6 +88,7 @@ extension ConverterImplementation: Converter {
                 }
             }
         }
+        
         for parameter in dictionaryOfUpdates {
             convertedString = convertedString.replacingOccurrences(of: "${\(parameter.key)}", with: parameter.value)
         }

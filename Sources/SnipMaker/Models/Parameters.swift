@@ -24,14 +24,14 @@ enum ParameterFunctions: String {
             guard let first = string.first else {
                 throw SnipMakerErrors.parameterError(".ucfirst")
             }
-            return first.uppercased() + String(string.dropFirst())
+            return first.uppercased() + string.dropFirst()
         case .lowercase:
             return string.lowercased()
         case .lcfirst:
             guard let first = string.first else {
                 throw SnipMakerErrors.parameterError(".lcfirst")
             }
-            return first.lowercased() + String(string.dropFirst())
+            return first.lowercased() + string.dropFirst()
         }
     }
 }

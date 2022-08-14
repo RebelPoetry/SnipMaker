@@ -16,7 +16,7 @@ struct SnipMaker: ParsableCommand {
     mutating func run() throws {
         
         let files = try createBundle(takeDirectory)
-        if files.count == 0 {
+        if !files.isEmpty {
             throw SnipMakerErrors.filesNotFound(takeDirectory)
         }
         
