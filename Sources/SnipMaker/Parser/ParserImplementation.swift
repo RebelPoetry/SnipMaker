@@ -44,7 +44,7 @@ extension ParserImplementation: Parser {
     // MARK: - Private
     
     /// Find the required parameters in the string.
-    /// - Parameters:  String
+    /// - Parameters: String
     /// - Returns: [Parameter: ""]
     private func findParameters(_ string: String) -> [String: String] {
         var string = string

@@ -14,14 +14,17 @@ struct SnipMaker: ParsableCommand {
     private var create = false
     
     mutating func run() throws {
+        
         let files = try createBundle(takeDirectory)
-        if files.count == 0 {
+        if files.isEmpty {
             throw SnipMakerErrors.filesNotFound(takeDirectory)
         }
         
         let parser = ParserImplementation()
+        let converter = ConverterImplementation()
         var parsedFiles: [[String: Any]] = []
         var parameters: [String: String] = [:]
+        var convertedFiles: [[String: Any]] = []
         
         for file in files {
             if let jsonData = try String(contentsOfFile: "\(takeDirectory)/\(file)").data(using: .utf8) {
@@ -32,7 +35,19 @@ struct SnipMaker: ParsableCommand {
                 parameters.merge(parser.findParameters(parsedData)) { (current, _) in current }
             }
         }
-        print(parameters)
+        for (nameOfParameter, _) in parameters {
+            print("Enter value for parameter: '\(nameOfParameter)'")
+            parameters[nameOfParameter] = readLine()
+        }
+        for parsedFile in parsedFiles {
+            convertedFiles.append(try converter.convert(parsedFile, with: parameters))
+        }
+        print(convertedFiles)
+        /*let manager = FileManager.default
+        let path = saveDirectory + "/tastydrop.md"
+        print(manager.createFile(atPath: path, contents: "hey".data(using: .utf8)))
+        print("sdf")*/
+        
     }
     
     // MARK: - Private
