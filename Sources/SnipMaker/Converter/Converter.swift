@@ -12,14 +12,14 @@ import Foundation
 protocol Converter {
     
     /// Converts file data:
-    /// - Removes bakcslashes
-    /// - Replace parameters with their inserted values and applyed functions
+    /// - Removes bakcslashes in such situation: "\/" will convert to "/"
+    /// - Replace parameters with their inserted values and applied functions
     ///
     /// Example:
     ///
     ///     let parameters = ["name": "bob", "surname": "vachevsky", "toy": "car" ]
     ///     let exampleData = [
-    ///         "firstField": ["text ${name.ucfirst} // a/nd ${surname}", "${toy.uppercase}"]
+    ///         "firstField": ["text ${name.ucfirst} \/\/\/ and ${surname}", "${toy.uppercase}"]
     ///         "secondField": "${name}"
     ///     ]
     ///     let convertedData = convert(exampleData, with: parameters)
@@ -27,7 +27,7 @@ protocol Converter {
     /// The 'convertedData' has a form:
     ///
     ///     [
-    ///         "firstField": ["text Bob  and vachevsky", "CAR"]
+    ///         "firstField": ["text Bob /// and vachevsky", "CAR"]
     ///         "secondField": "bob"
     ///     ]
     ///

@@ -54,7 +54,7 @@ extension ConverterImplementation: Converter {
     /// - Throws: unknownFunction (when parameter has an undefined function)
     /// - Returns: Converted string
     func convertString(_ givenString: String, with parameters: [String: String]) throws -> String {
-        var string = givenString.filter { $0 != "/" }
+        var string = givenString.replacingOccurrences(of: "\\/", with: "/")
         var convertedString = string
         var nameOfParameter = ""
         var nameOfFunction = ""

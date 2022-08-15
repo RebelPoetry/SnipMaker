@@ -16,7 +16,7 @@ struct SnipMaker: ParsableCommand {
     mutating func run() throws {
         
         let files = try createBundle(takeDirectory)
-        if !files.isEmpty {
+        if files.isEmpty {
             throw SnipMakerErrors.filesNotFound(takeDirectory)
         }
         
@@ -42,6 +42,7 @@ struct SnipMaker: ParsableCommand {
         for parsedFile in parsedFiles {
             convertedFiles.append(try converter.convert(parsedFile, with: parameters))
         }
+        print(convertedFiles)
         /*let manager = FileManager.default
         let path = saveDirectory + "/tastydrop.md"
         print(manager.createFile(atPath: path, contents: "hey".data(using: .utf8)))
