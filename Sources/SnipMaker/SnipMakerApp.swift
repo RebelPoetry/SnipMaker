@@ -32,6 +32,9 @@ CreatorType: MDCreator {
     /// Directory for save file
     private let saveDirectory: String
     
+    /// Flag which indicates if result needs to push on git
+    private let pushToGit: Bool
+    
     /// Default initializer
     /// - Parameters:
     ///   - takeDirectory: Directory with files
@@ -40,12 +43,14 @@ CreatorType: MDCreator {
     ///   - creator: File creator  instance
     ///   - converter: Converter instance
     init(
+        pushToGit: Bool,
         takeDirectory: String,
         saveDirectory: String,
         parser: ParserType,
         creator: CreatorType,
         converter: ConverterType
     ) {
+        self.pushToGit = pushToGit
         self.takeDirectory = takeDirectory
         self.saveDirectory = saveDirectory
         self.parser = parser

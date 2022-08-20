@@ -15,8 +15,13 @@ struct SnipMaker: ParsableCommand {
     @Option(name: .shortAndLong, help: "Directory for take .tcbundle files")
     private var takeDirectory = FileManager.default.currentDirectoryPath
     
+    @Option(name: .shortAndLong, help: "Push to git")
+    private var push = false
+
+    
     mutating func run() throws {
         let app = SnipMakerApp(
+            pushToGit: push,
             takeDirectory: takeDirectory,
             saveDirectory: saveDirectory,
             parser: ParserImplementation(),
