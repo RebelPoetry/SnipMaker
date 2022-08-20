@@ -11,11 +11,18 @@ import Foundation
 
 enum ParameterFunctions: String {
     
+    // MARK: - Cases
+    
     case uppercase
     case ucfirst
     case lowercase
     case lcfirst
     
+    /// Applies function of parameters to themselves
+    ///
+    /// - Parameters:
+    ///  - string: Parameter for apply
+    /// - Returns: Applied parameter
     func apply(_ string: String) throws -> String {
         switch self {
         case .uppercase:
