@@ -91,7 +91,7 @@ CreatorType: MDCreator {
         let newFile = creator.create(convertedFiles, MDFrameImplementation.self)
         
         let manager = FileManager.default
-        let path = saveDirectory + "/INCETRO - Bible of snippets.md"
+        let path = saveDirectory + "/README.md"
         if manager.createFile(atPath: path, contents: newFile.data(using: .utf8)) {
             print("Done.")
         } else {

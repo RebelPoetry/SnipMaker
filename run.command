@@ -8,5 +8,6 @@ GitLink=""
 
 cd $AppDir
 
-swift run SnipMaker -s $SaveDir -t $TakeDir -p $PushToGit
+rm README.md
+swift run SnipMaker -s $AppDir -t $TakeDir -p $PushToGit
 
