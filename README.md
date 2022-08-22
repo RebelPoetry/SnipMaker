@@ -15,9 +15,9 @@ service_protocol ${name:identifier}
 ```
 Output:
 ```swift
-/// `GlebService` instance
+/// `SdfService` instance
 ///
-/// It is a bunch of methods that works with `GlebPlainObject` structure.
+/// It is a bunch of methods that works with `SdfPlainObject` structure.
 /// Basically, services contains primitive CRUD actions or atomic business actions.
 /// Every service must return only `AnyPublisher` type from any method or `ServiceCall` type
 /// that fully compatible with `Combine` and `AnyPublisher`
@@ -29,9 +29,9 @@ Output:
 /// Almost always standard services include DAO and this lets you focus on the data persistence logic
 /// rather than on data access plumbing
 ///
-/// - seealso: `GlebPlainObject` structure
-/// - seealso: `GlebServiceImplementation` class
-protocol GlebService {
+/// - seealso: `SdfPlainObject` structure
+/// - seealso: `SdfServiceImplementation` class
+protocol SdfService {
 
 }
 ```
@@ -49,11 +49,11 @@ service_impl ${name:identifier}
 ```
 Output:
 ```swift
-// MARK: - GlebServiceImplementation
+// MARK: - SdfServiceImplementation
 
-/// `GlebServiceImplementation` instance
+/// `SdfServiceImplementation` instance
 ///
-/// It is a bunch of methods that works with `GlebPlainObject` structure.
+/// It is a bunch of methods that works with `SdfPlainObject` structure.
 /// Basically, services contains primitive CRUD actions or atomic business actions.
 /// Every service must return only `AnyPublisher` type from any method or `ServiceCall` type
 /// that fully compatible with `Combine` and `AnyPublisher`
@@ -65,15 +65,15 @@ Output:
 /// Almost always standard services include DAO and this lets you focus on the data persistence logic
 /// rather than on data access plumbing
 ///
-/// - seealso: `GlebPlainObject` structure
-/// - seealso: `GlebService` protocol
-public final class GlebServiceImplementation {
+/// - seealso: `SdfPlainObject` structure
+/// - seealso: `SdfService` protocol
+public final class SdfServiceImplementation {
 
 }
 
-// MARK: – GlebService
+// MARK: – SdfService
 
-extension GlebServiceImplementation: GlebService {
+extension SdfServiceImplementation: SdfService {
 
 }
 ```
@@ -102,7 +102,7 @@ Output:
 /// the infrastructure or technology used to access necessary data layer.
 ///
 /// - seealso: `DownloadServiceImplementation` class
-protocol GlebService {
+protocol SdfService {
 
 }
 ```
@@ -146,8 +146,8 @@ dao_alias ${name:identifier}
 ```
 Output:
 ```swift
-/// [DAO](https://www.oracle.com/java/technologies/dataaccessobject.html) alias for `glebPlainObject`
-public typealias glebDAO = DAO<RealmStorage<glebModelObject>, glebTranslator>
+/// [DAO](https://www.oracle.com/java/technologies/dataaccessobject.html) alias for `sdfPlainObject`
+public typealias sdfDAO = DAO<RealmStorage<sdfModelObject>, sdfTranslator>
 ```
 
 ------
@@ -163,7 +163,7 @@ dao ${name:identifier}
 ```
 Output:
 ```swift
-/// `glebDAO` instance
+/// `sdfDAO` instance
 ///
 /// The DAO implements the access mechanism required to work with the data source.
 /// The data source could be a persistent store like an RDBMS, an external service like a B2B exchange,
@@ -175,6 +175,6 @@ Output:
 /// this pattern allows the DAO to adapt to different storage schemes without affecting its clients or business components.
 ///
 /// Essentially, the DAO acts as an adapter between the component and the data source.
-private let dao: glebDAO
+private let dao: sdfDAO
 
 ```
