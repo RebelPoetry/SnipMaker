@@ -15,9 +15,9 @@ service_protocol ${name:identifier}
 ```
 Output:
 ```swift
-/// `DsfdsfService` instance
+/// `SadasdService` instance
 ///
-/// It is a bunch of methods that works with `DsfdsfPlainObject` structure.
+/// It is a bunch of methods that works with `SadasdPlainObject` structure.
 /// Basically, services contains primitive CRUD actions or atomic business actions.
 /// Every service must return only `AnyPublisher` type from any method or `ServiceCall` type
 /// that fully compatible with `Combine` and `AnyPublisher`
@@ -29,9 +29,9 @@ Output:
 /// Almost always standard services include DAO and this lets you focus on the data persistence logic
 /// rather than on data access plumbing
 ///
-/// - seealso: `DsfdsfPlainObject` structure
-/// - seealso: `DsfdsfServiceImplementation` class
-protocol DsfdsfService {
+/// - seealso: `SadasdPlainObject` structure
+/// - seealso: `SadasdServiceImplementation` class
+protocol SadasdService {
 
 }
 ```
@@ -49,11 +49,11 @@ service_impl ${name:identifier}
 ```
 Output:
 ```swift
-// MARK: - DsfdsfServiceImplementation
+// MARK: - SadasdServiceImplementation
 
-/// `DsfdsfServiceImplementation` instance
+/// `SadasdServiceImplementation` instance
 ///
-/// It is a bunch of methods that works with `DsfdsfPlainObject` structure.
+/// It is a bunch of methods that works with `SadasdPlainObject` structure.
 /// Basically, services contains primitive CRUD actions or atomic business actions.
 /// Every service must return only `AnyPublisher` type from any method or `ServiceCall` type
 /// that fully compatible with `Combine` and `AnyPublisher`
@@ -65,15 +65,15 @@ Output:
 /// Almost always standard services include DAO and this lets you focus on the data persistence logic
 /// rather than on data access plumbing
 ///
-/// - seealso: `DsfdsfPlainObject` structure
-/// - seealso: `DsfdsfService` protocol
-public final class DsfdsfServiceImplementation {
+/// - seealso: `SadasdPlainObject` structure
+/// - seealso: `SadasdService` protocol
+public final class SadasdServiceImplementation {
 
 }
 
-// MARK: – DsfdsfService
+// MARK: – SadasdService
 
-extension DsfdsfServiceImplementation: DsfdsfService {
+extension SadasdServiceImplementation: SadasdService {
 
 }
 ```
@@ -102,7 +102,7 @@ Output:
 /// the infrastructure or technology used to access necessary data layer.
 ///
 /// - seealso: `DownloadServiceImplementation` class
-protocol DsfdsfService {
+protocol SadasdService {
 
 }
 ```
@@ -146,8 +146,8 @@ dao_alias ${name:identifier}
 ```
 Output:
 ```swift
-/// [DAO](https://www.oracle.com/java/technologies/dataaccessobject.html) alias for `dsfdsfPlainObject`
-public typealias dsfdsfDAO = DAO<RealmStorage<dsfdsfModelObject>, dsfdsfTranslator>
+/// [DAO](https://www.oracle.com/java/technologies/dataaccessobject.html) alias for `sadasdPlainObject`
+public typealias sadasdDAO = DAO<RealmStorage<sadasdModelObject>, sadasdTranslator>
 ```
 
 ------
@@ -163,7 +163,7 @@ dao ${name:identifier}
 ```
 Output:
 ```swift
-/// `dsfdsfDAO` instance
+/// `sadasdDAO` instance
 ///
 /// The DAO implements the access mechanism required to work with the data source.
 /// The data source could be a persistent store like an RDBMS, an external service like a B2B exchange,
@@ -175,6 +175,6 @@ Output:
 /// this pattern allows the DAO to adapt to different storage schemes without affecting its clients or business components.
 ///
 /// Essentially, the DAO acts as an adapter between the component and the data source.
-private let dao: dsfdsfDAO
+private let dao: sadasdDAO
 
 ```
