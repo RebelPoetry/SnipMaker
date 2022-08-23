@@ -8,7 +8,7 @@ It's a script for your mac, which can top up the collection of snippets stored r
 
 - [x] Easy to customise output structure
 - [x] High loyalty to input data
-- [x] Running by
+- [x] Running by .command file
 
 ---
 
