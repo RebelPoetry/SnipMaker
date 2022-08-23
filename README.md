@@ -210,13 +210,7 @@ I highly recommend to check it and set it for your own.
 
 incetro, incetro@ya.ru
 
-## Collection:
-
-<details>
-
-sad
-
-</details># INCETRO – Services
+## Collection:# INCETRO – Services
 
 Core snippets for service layer and services in general. Here you can find snippets for protocol / classes declarations, DAO instances declarations, service instance declarations and etc.
 
@@ -233,9 +227,9 @@ service_protocol ${name:identifier}
 ```
 Output:
 ```swift
-/// `TESTService` instance
+/// `TestService` instance
 ///
-/// It is a bunch of methods that works with `TESTPlainObject` structure.
+/// It is a bunch of methods that works with `TestPlainObject` structure.
 /// Basically, services contains primitive CRUD actions or atomic business actions.
 /// Every service must return only `AnyPublisher` type from any method or `ServiceCall` type
 /// that fully compatible with `Combine` and `AnyPublisher`
@@ -247,9 +241,9 @@ Output:
 /// Almost always standard services include DAO and this lets you focus on the data persistence logic
 /// rather than on data access plumbing
 ///
-/// - seealso: `TESTPlainObject` structure
-/// - seealso: `TESTServiceImplementation` class
-protocol TESTService {
+/// - seealso: `TestPlainObject` structure
+/// - seealso: `TestServiceImplementation` class
+protocol TestService {
 
 }
 ```
@@ -267,11 +261,11 @@ service_impl ${name:identifier}
 ```
 Output:
 ```swift
-// MARK: - TESTServiceImplementation
+// MARK: - TestServiceImplementation
 
-/// `TESTServiceImplementation` instance
+/// `TestServiceImplementation` instance
 ///
-/// It is a bunch of methods that works with `TESTPlainObject` structure.
+/// It is a bunch of methods that works with `TestPlainObject` structure.
 /// Basically, services contains primitive CRUD actions or atomic business actions.
 /// Every service must return only `AnyPublisher` type from any method or `ServiceCall` type
 /// that fully compatible with `Combine` and `AnyPublisher`
@@ -283,15 +277,15 @@ Output:
 /// Almost always standard services include DAO and this lets you focus on the data persistence logic
 /// rather than on data access plumbing
 ///
-/// - seealso: `TESTPlainObject` structure
-/// - seealso: `TESTService` protocol
-public final class TESTServiceImplementation {
+/// - seealso: `TestPlainObject` structure
+/// - seealso: `TestService` protocol
+public final class TestServiceImplementation {
 
 }
 
-// MARK: – TESTService
+// MARK: – TestService
 
-extension TESTServiceImplementation: TESTService {
+extension TestServiceImplementation: TestService {
 
 }
 ```
@@ -320,7 +314,7 @@ Output:
 /// the infrastructure or technology used to access necessary data layer.
 ///
 /// - seealso: `DownloadServiceImplementation` class
-protocol TESTService {
+protocol TestService {
 
 }
 ```
@@ -364,8 +358,8 @@ dao_alias ${name:identifier}
 ```
 Output:
 ```swift
-/// [DAO](https://www.oracle.com/java/technologies/dataaccessobject.html) alias for `TESTPlainObject`
-public typealias TESTDAO = DAO<RealmStorage<TESTModelObject>, TESTTranslator>
+/// [DAO](https://www.oracle.com/java/technologies/dataaccessobject.html) alias for `testPlainObject`
+public typealias testDAO = DAO<RealmStorage<testModelObject>, testTranslator>
 ```
 
 ------
@@ -381,7 +375,7 @@ dao ${name:identifier}
 ```
 Output:
 ```swift
-/// `TESTDAO` instance
+/// `testDAO` instance
 ///
 /// The DAO implements the access mechanism required to work with the data source.
 /// The data source could be a persistent store like an RDBMS, an external service like a B2B exchange,
@@ -393,6 +387,6 @@ Output:
 /// this pattern allows the DAO to adapt to different storage schemes without affecting its clients or business components.
 ///
 /// Essentially, the DAO acts as an adapter between the component and the data source.
-private let dao: TESTDAO
+private let dao: testDAO
 
 ```
