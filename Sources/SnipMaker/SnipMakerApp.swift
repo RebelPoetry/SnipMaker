@@ -121,7 +121,7 @@ CreatorType: MDCreator {
 
             - [x] Easy to customise output structure
             - [x] High loyalty to input data
-            - [x] Running by
+            - [x] Running by .command file
 
             ---
 
