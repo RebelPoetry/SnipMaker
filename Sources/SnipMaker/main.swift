@@ -17,7 +17,6 @@ struct SnipMaker: ParsableCommand {
     
     @Option(name: .shortAndLong, help: "Push to git")
     private var push = false
-
     
     mutating func run() throws {
         let app = SnipMakerApp(

@@ -35,7 +35,7 @@ extension MDCreatorImplementation: MDCreator {
             for field in frame.allCases {
                 if field.mayRepeat {
                     let partOfSnippet = findText(data, createdText, field)
-                    if partOfSnippet != "Not found parameter" {
+                    if partOfSnippet != "Not found text for field" {
                         snippetText += partOfSnippet
                     } else {
                         isContinue = false
@@ -82,6 +82,6 @@ extension MDCreatorImplementation: MDCreator {
                 }
             }
         }
-        return "Not found parameter"
+        return "Not found text for field"
     }
 }
