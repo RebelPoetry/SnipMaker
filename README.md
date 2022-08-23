@@ -210,7 +210,7 @@ I highly recommend to check it and set it for your own.
 
 incetro, incetro@ya.ru
 
-## Collection:
+# Collection:
 # INCETRO – Services
 
 Core snippets for service layer and services in general. Here you can find snippets for protocol / classes declarations, DAO instances declarations, service instance declarations and etc.
