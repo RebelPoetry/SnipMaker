@@ -1,4 +1,4 @@
-            # SnipMaker
+# SnipMaker
 
             It's a script for your mac, which can top up the collection of snippets stored right here
 
