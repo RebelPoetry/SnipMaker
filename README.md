@@ -36,7 +36,6 @@ Now it's a .tcbundle file with such json content
    ],
    "is_enabled" : true,
    "name" : "INCETRO – Services"
- }
 ```
 
 ---
