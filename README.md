@@ -2,15 +2,11 @@
 
 It's a script for your mac, which can top up the collection of snippets stored right here
 
----
-
 ## Features
 
 - [x] Easy to customise output structure
 - [x] High loyalty to input data
 - [x] Running by .command file
-
----
 
 ## Input data
 
@@ -37,8 +33,6 @@ Now it's a .tcbundle file with such json content
    "is_enabled" : true,
    "name" : "INCETRO – Services"
 ```
-
----
 
 ## How customise structre?
 
@@ -172,8 +166,6 @@ protocol SadasdService {
 
 </details>
 
----
-
 ## How run the scirpt?
 
 Just download this project and open the **run.command** file that stored in this project.
@@ -187,14 +179,10 @@ This file has a  value which you need to update:
 There are also has a git part, responsible for pushing new snippets to the collection.
 I highly recommend to check it and set it for your own.
 
----
-
 ## Requriments
  - macOS 10.13+
  - Xcode 9.0
  - Swift 5
-
----
 
 ## Communication
 
@@ -205,10 +193,6 @@ I highly recommend to check it and set it for your own.
 ## Author
 
 incetro, incetro@ya.ru
-
----
----
----
 
 # Collection:
 # INCETRO – Services
