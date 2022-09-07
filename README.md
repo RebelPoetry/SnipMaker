@@ -5,7 +5,7 @@ It's a script for your mac, which can top up the collection of snippets stored r
 - [Features](#features)
 - [Input data](#input-data)
 - [How to customise the structre?](#how-customise-structure?)
-- [How to run the script](#how-to-run-the-script)
+- [How to run the script?](#how-to-run-the-script)
 - [Requirements](#requirements)
 - [Communication](#communication)
 - [Author](#author)
