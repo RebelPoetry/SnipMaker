@@ -2,13 +2,21 @@
 
 It's a script for your mac, which can top up the collection of snippets stored right here
 
-## Features
+- [Features](#features)
+- [Input data](#input-data)
+- [How customise structre?](#how-customise-structure?)
+- [How to run the script](#how-to-run-the-script)
+- [Requirements](#requirements)
+- [Communication](#communication)
+- [Author](#author)
+
+<h2 id="features">Features</h2>
 
 - [x] Easy to customise output structure
 - [x] High loyalty to input data
 - [x] Running by .command file
 
-## Input data
+<h2 id="input-data">Input data</h2>
 
 Now it's a .tcbundle file with such json content
 
@@ -34,7 +42,7 @@ Now it's a .tcbundle file with such json content
    "name" : "INCETRO – Services"
 ```
 
-## How customise structre?
+<h2 id="how-customise-structure?">How to customize the structure?</h2>
 
  - Cases in this enum responsible for connection between input data and output structure. Raw value - field name in input data
  - Enum also has fields:
@@ -166,7 +174,7 @@ protocol SadasdService {
 
 </details>
 
-## How run the scirpt?
+<h2 id="how-to-run-the-script">How to run the scirpt?</h2>
 
 Just download this project and open the **run.command** file that stored in this project.
 
@@ -179,18 +187,19 @@ This file has a  value which you need to update:
 There are also has a git part, responsible for pushing new snippets to the collection.
 I highly recommend to check it and set it for your own.
 
-## Requriments
+<h2 id="requirements">Requirements</h2>
+
  - macOS 10.13+
  - Xcode 9.0
  - Swift 5
 
-## Communication
+<h2 id="communication">Communication</h2>
 
  - If you found a bug, open an issue.
  - If you have a feature request, open an issue.
  - If you want to contribute, submit a pull request.
 
-## Author
+<h2 id="author">Author</h2>
 
 incetro, incetro@ya.ru
 
@@ -212,9 +221,9 @@ service_protocol ${name:identifier}
 ```
 Output:
 ```swift
-/// `UserService` instance
+/// `TestService` instance
 ///
-/// It is a bunch of methods that works with `UserPlainObject` structure.
+/// It is a bunch of methods that works with `TestPlainObject` structure.
 /// Basically, services contains primitive CRUD actions or atomic business actions.
 /// Every service must return only `AnyPublisher` type from any method or `ServiceCall` type
 /// that fully compatible with `Combine` and `AnyPublisher`
@@ -226,9 +235,9 @@ Output:
 /// Almost always standard services include DAO and this lets you focus on the data persistence logic
 /// rather than on data access plumbing
 ///
-/// - seealso: `UserPlainObject` structure
-/// - seealso: `UserServiceImplementation` class
-protocol UserService {
+/// - seealso: `TestPlainObject` structure
+/// - seealso: `TestServiceImplementation` class
+protocol TestService {
 
 }
 ```
@@ -246,11 +255,11 @@ service_impl ${name:identifier}
 ```
 Output:
 ```swift
-// MARK: - UserServiceImplementation
+// MARK: - TestServiceImplementation
 
-/// `UserServiceImplementation` instance
+/// `TestServiceImplementation` instance
 ///
-/// It is a bunch of methods that works with `UserPlainObject` structure.
+/// It is a bunch of methods that works with `TestPlainObject` structure.
 /// Basically, services contains primitive CRUD actions or atomic business actions.
 /// Every service must return only `AnyPublisher` type from any method or `ServiceCall` type
 /// that fully compatible with `Combine` and `AnyPublisher`
@@ -262,15 +271,15 @@ Output:
 /// Almost always standard services include DAO and this lets you focus on the data persistence logic
 /// rather than on data access plumbing
 ///
-/// - seealso: `UserPlainObject` structure
-/// - seealso: `UserService` protocol
-public final class UserServiceImplementation {
+/// - seealso: `TestPlainObject` structure
+/// - seealso: `TestService` protocol
+public final class TestServiceImplementation {
 
 }
 
-// MARK: – UserService
+// MARK: – TestService
 
-extension UserServiceImplementation: UserService {
+extension TestServiceImplementation: TestService {
 
 }
 ```
@@ -299,7 +308,7 @@ Output:
 /// the infrastructure or technology used to access necessary data layer.
 ///
 /// - seealso: `DownloadServiceImplementation` class
-protocol UserService {
+protocol TestService {
 
 }
 ```
@@ -343,8 +352,8 @@ dao_alias ${name:identifier}
 ```
 Output:
 ```swift
-/// [DAO](https://www.oracle.com/java/technologies/dataaccessobject.html) alias for `UserPlainObject`
-public typealias UserDAO = DAO<RealmStorage<UserModelObject>, UserTranslator>
+/// [DAO](https://www.oracle.com/java/technologies/dataaccessobject.html) alias for `TestPlainObject`
+public typealias TestDAO = DAO<RealmStorage<TestModelObject>, TestTranslator>
 ```
 
 ------
@@ -360,7 +369,7 @@ dao ${name:identifier}
 ```
 Output:
 ```swift
-/// `UserDAO` instance
+/// `TestDAO` instance
 ///
 /// The DAO implements the access mechanism required to work with the data source.
 /// The data source could be a persistent store like an RDBMS, an external service like a B2B exchange,
@@ -372,6 +381,6 @@ Output:
 /// this pattern allows the DAO to adapt to different storage schemes without affecting its clients or business components.
 ///
 /// Essentially, the DAO acts as an adapter between the component and the data source.
-private let dao: UserDAO
+private let dao: TestDAO
 
 ```
